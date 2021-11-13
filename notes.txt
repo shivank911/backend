@@ -1,0 +1,146 @@
+server shuru karo toh  req aati hai browser se 
+server banae ke lie hame http module ki zarurat hoti hai jiske andar fujctin hota hai create server
+joki ek arrow function leta hai jisme request aur response hote hai 
+req jo browser se aayi 
+aur res jo hame bhejna hai server ko 
+1)sabse pehle sever ka header set karo aur batao ki kis type ka data ya file bhej re 
+2)phir res.write() ko call karo aur file bhej ke res.end() se server band 
+phir end mei srver ko listen karwado port par 
+
+
+// STATUS CODES
+ek short message hais server ki taraf se client ko jo batata hau ki kya kaam hua
+aur har code ka alag matlab 
+ye developer tools mei network tab mei 
+500 types of status code 
+5 classes 
+ 1)100-199 information purpose
+ 2) 200-299 success
+ 3)300-399  redirect
+ 4)400-499  client side error like google.com/abcd
+ 5)500-599 server ki galati like down or crash 
+seo optimization mei help karte hai 
+re.statusCode(200)
+to rediredct ham use karte hai res.setHeader('Location',page-name) aur phir end kyuki ham phir se wrie kar re 
+jisse ye rediret ho jata 
+
+
+
+//EXPRESS
+1)server side logic implemented
+2)pre written functions hai basically 
+3)const express =require('express') 
+iske baad hamara ye express ek object ka naam ho gaya aur aap =express() yaha par aap uss object ka instance
+ab ham aap par saare function laga sakte 
+app.send("location kaha par bhejna hai" ,(ek call back function jo return karega jo bhi aapka logic hai))
+ye status code aur header bhi apne aap set kar deta hai hame set nahi karna padta 
+top to bottom chalega aur hamara page response ka bhookha hai 
+jaise hi koi response milega baaki neeche ke koi function nahi chalenge 
+aur app.use()ke baad koi nahi chalta vo as a default hai 
+ham send app.get("page se kya aaya ",(callback function))
+aur res se ham bhej sakte hai with send() se koi bhi data aur sendfile() se file 
+
+//HTTP methods 
+1)req aur resoponse cyle ka jo protocols follow karti hai 
+1)GET-{
+    -TO GET data 
+}
+2)POST{
+    to send data from front end to backend
+}
+3)PATCH{
+    TO update data 
+}
+4)Delete{
+    to delete data 
+}
+jo bhi data hai front end se bhejte hai vo req ki body mei jata hai
+.json se bhi bhej sakte hai 
+to send using post hame ek middleware function ue karna padta hai jo usse json format mei bheje taaki system read kar sake 
+
+//PARAMETERS
+AS IT IS DB MEI DATA LEKE SEARCH KRKE LEKE ATE  
+//QUERIES
+to filter a particular data 
+amazon.in/?inphone=13 & gb=256
+
+
+///API
+APPLICATION PROGRAMMING INTERFACE
+SUPPORTS MULTIPLE PLATFORM AND LANGUAGE INDIPENDENT
+
+
+//REST API 
+AN API WHICH follow rules
+rest is representational state transfer
+1)response should be same ireespective of request platform like koi bhi mac windows ya linux
+2)routes should be named on the basis of nouns 
+3)http ke methods use hone chaie for doing operation on these routes
+4)data should always in json format
+5)should be stateless matlab ki poori cheezein yaad nahi rakhti jo
+
+
+
+//Mounting in express or routing
+toh pehle express.Router() ke function ko call karke instance banao aur phir app.use("home root ki yaa jo bhi use karwni phir 
+",userrouter ko lo)
+phir userrouter.route("/").get(function).patch(function).delete(function).POST(function)
+
+
+//Signup form 
+so sabse peheleroute banao signup form ka 
+vo karne ke lie router function ka instnce banao aur fir app.use ko home route batao jaha vo show hoga signup form html vala like 
+localhost:3000/auth par 
+phir route banao ki jab localhost:3000/auth/signup par jaoge toh signup page aaje 
+phir usme 2 req lagengi ek get aur ek post 
+get req mei ham signup page mangwaenge apne server se 
+aur post req mei ham server par ham req bhejnge login details using axios jo ki ek promise based http client hai jo ek request bhejta hai to 
+http to backend 
+backend for signup
+{
+let express=require('express');
+let app=express();
+
+const authRouter=express.Router();
+app.use(express.json());
+app.use("/auth",authRouter);
+
+authRouter
+.route('/signup')
+.get(getSignup)
+.post(postSignup);
+
+
+
+function getSignup(req,res){
+    res.sendFile("/views/signup.html",{root:__dirname});
+}
+function postSignup(req,res){
+    let obj=req.body;
+    console.log('backend',obj);
+    res.json({
+        message:"user signed up",
+        data:obj,
+    })
+}
+
+app.listen(3000);
+}
+
+//front end part for signup
+{
+    let btn=document.querySelector('input[type=submit]');
+    btn.addEventListener('click',async function(e){
+        e.preventDefault();
+        let usrname=document.querySelector('input[type=text]').value;
+        let pass=document.querySelector('input[type=password]').value;
+
+        let res=await axios.post('/auth/signup',{usrname,pass})
+        console.log('res',res);
+    })
+}
+//Middleware function 
+
+
+
+
