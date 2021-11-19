@@ -1,6 +1,8 @@
 let express=require('express');
 const authRouter=express.Router();
-const usermodel=require('../Model/userModel')
+const usermodel=require('../Model/userModel');
+let jwt=require('jsonwebtoken');
+let JWT_KEY="SSSHHH";
 authRouter
 .route('/signup')
 .get(getSignup)
@@ -14,9 +16,13 @@ authRouter
 async function loginUser(req,res){
     try{
     let data=req.body;
+    if(data.usrname){
     let user=await usermodel.findOne({usrname:data.usrname});
     if(user){
         if(user.password==data.password){
+            let uid=user['_id'];//uid ya payload
+            let token=jwt.sign({payload:uid},JWT_KEY);
+            res.cookie('Login',token);
             return res.json({
                 message:'user has logged in',
                 userDetails:data
@@ -30,8 +36,15 @@ async function loginUser(req,res){
     else{
         return res.json({
             message:"user Not found"
-        }) 
-    }}
+        })
+    }
+}
+    else{
+        return res.json({
+            message:"invalid user"
+        })
+    } 
+    }
     catch(err){
         return res.json({
             message:err.message

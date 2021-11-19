@@ -1,0 +1,50 @@
+Database-Database is a physical container for collections.
+Collection-Collection is a group of MongoDB documents.
+Document-A document is a set of key-value pairs.
+to create or use- use DATABASE_NAME
+to show databases -show dbs.
+to drop database--db.dropDatabase()
+to create a collection-db.createCollection(collection name)
+In MongoDB, you don't need to create collection. MongoDB creates collection automatically, when you insert some document.
+db.tutorialspoint.insert({"name" : "tutorialspoint"})
+to drop a collection-db.COLLECTION_NAME.drop()
+to insert one document in mongo db db.COLLECTION_NAME.insertOne(document)
+to insert many db.empDetails.insertMany()
+to find db.COLLECTION_NAME.find() to get all 
+in formatted manner db.COLLECTION_NAME.find().pretty()
+to find one -- specific db.COLLECTIONNAME.findOne(key value pair)
+RDBMS Where Clause Equivalents in MongoDB
+-
+Operation	Syntax	Example	RDBMS Equivalent
+Equality	{<key>:{$eg;<value>}}	db.mycol.find({"by":"tutorials point"}).pretty()	where by = 'tutorials point'
+
+Less Than	{<key>:{$lt:<value>}}	db.mycol.find({"likes":{$lt:50}}).pretty()	where likes < 50
+
+Less Than Equals	{<key>:{$lte:<value>}}	db.mycol.find({"likes":{$lte:50}}).pretty()	where likes <= 50
+
+Greater Than	{<key>:{$gt:<value>}}	db.mycol.find({"likes":{$gt:50}}).pretty()	where likes > 50
+
+Greater Than Equals	{<key>:{$gte:<value>}}	db.mycol.find({"likes":{$gte:50}}).pretty()	where likes >= 50
+
+Not Equals	{<key>:{$ne:<value>}}	db.mycol.find({"likes":{$ne:50}}).pretty()	where likes != 50
+
+Values in an array	{<key>:{$in:[<value1>, <value2>,……<valueN>]}}	db.mycol.find({"name":{$in:["Raj", "Ram", "Raghu"]}}).pretty()	Where name matches any of the value in :["Raj", "Ram", "Raghu"]
+
+Values not in an array	{<key>:{$nin:<value>}}	db.mycol.find({"name":{$nin:["Ramu", "Raghav"]}}).pretty()	Where name values is not in the array :["Ramu", "Raghav"] or, doesn’t exist at all
+
+
+AND in MongoDB
+db.mycol.find({ $and: [ {<key1>:<value1>}, { <key2>:<value2>} ] })
+
+or in mongodb  
+db.mycol.find({$or: [{key1: value1}, {key2:value2}]}).pretty()
+
+update method -The update() method updates the values in the existing document.
+db.COLLECTION_NAME.update(SELECTION_CRITERIA, UPDATED_DATA)
+By default, MongoDB will update only a single document. To update multiple documents, you need to set a parameter 'multi' to true.
+db.mycol.update({'title':'MongoDB Overview'},{$set:{'title':'New MongoDB Tutorial'}},{multi:true})
+
+The save() method replaces the existing document with the new document passed in the save() method.
+
+
+

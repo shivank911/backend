@@ -4,80 +4,36 @@ const userRouter=express.Router();
 let cookieParser=require('cookie-parser');
 app.use(express.json());
 app.use(cookieParser());
+let jwt=require('jsonwebtoken');
+let JWT_KEY='SSSHHH';
 const usermodel=require('../Model/userModel')
+const {getUser,getAllUser,deleteUser,updateUser,}=require('../Controllers/userController');
+const { login, signup, isAuthorise,protectRoute } = require('../Controllers/authController');
+//user ke options
+userRouter.route('/:id')
+.patch(updateUser)
+.delete(deleteUser);
 
-userRouter
-.route('/')
-.get(getuser)
-.post(postUser)
-.delete(deleteUser)
-.patch(patchUser);
+//signup 
+userRouter.route('/signup')
+.post(signup)
 
-userRouter
-.route('/getCookies')
-.get(getCookies);
+//login
+userRouter.route('/login')
+.post(login);
+
+//profilepage
+app.use(protectRoute);
+userRouter.route('/userProfile')
+.get(getUser)
+
+//admin privilidges
+app.use(isAuthorise(['admin']));
+userRouter.route('')
+.get(getAllUser)
 
 
-userRouter
-.route('/setCookies')
-.get(setCookies);
-
-userRouter.route('/:id').get(getuserById);
 
 
-function getuser(req,res){
-    //console.log("get successful");
-    //res.send(users);
-};
-function postUser(req,res){
-    //console.log(req.body);
-    users=req.body;
-    res.json({
-        message:"data recieved successfully",
-        user:req.body,
-    });
-}
-async function patchUser(req,res){
-    console.log(req.body);
-    let user=await usermodel.findOneAndUpdate({usrname:"shivank"})
-    // let datatobeupdated=req.body;
-    // for(key in datatobeupdated){
-    //     users[key]=datatobeupdated[key];
-    // }
-    res.json({
-        message:"updated successfully"
-    })
-}
-async function deleteUser(req,res){
-    let datatobedeleted=req.body;
-    let user=await usermodel.findOneAndDelete(datatobedeleted);
-    res.json({
-        message:"data has been deleted"
-    })
-}
-function getuserById(req,res){
-    console.log(req.params.id);
-    let paramsid=req.params.id;
-    let obj={}
-    for(let i=0;i<users.length;i++){
-        if(users[i]['id']==paramsid){
-            obj=users[i];
-        }
-    }
-    res.json({
-        message:"user id received",
-        data:obj,
-    })
-}
-function setCookies(req,res){
-    //res.setHeader('Set-Cookie','isLoggedIn=true')
-    res.cookie('isLoggedIn',true,{maxAge:1000*60*60*24,secure:true,httpOnly:true});
-    res.cookie('isprime',true,{maxAge:1000*60*60*24,secure:true,httpOnly:true});
-    res.send('cookies has been set');
-}
-function getCookies(req,res){
-    let cookie=req.cookies.IL;
-    console.log(cookie);
-    res.send('cookies received');
-}
+
 module.exports=userRouter

@@ -1,5 +1,6 @@
 let express=require('express');
 let mongoose=require('mongoose');
+const emailValidator=require('email-validator');
 const db_link='mongodb+srv://admin:X97H4WrVR895ZqSz@cluster0.6id0f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 mongoose.connect(db_link)
     .then(function(db){
@@ -11,10 +12,17 @@ mongoose.connect(db_link)
         console.log(err);
     })
     const userSchema=mongoose.Schema({
-        usrname:{
+        name:{
             type:String,
             required:true,
-            unique:true
+        },
+        email:{
+            type:String,
+            required:true,
+            unique:true,
+            validate:function(){
+                return emailValidator.validate(this.email);
+            }
         },
         password:{
             type:String,
@@ -27,6 +35,15 @@ mongoose.connect(db_link)
             validate:function(){
                 return this.password==this.confirmPassword;
             }
+        },
+        role:{
+            type:String,
+            enum:['admin','user','resowner','deliveryboy'],
+            default:'user',
+        },
+        profileImage:{
+            type:String,
+            default:'imag/users/default.png',
         }
     });
     userSchema.pre('save',function(){

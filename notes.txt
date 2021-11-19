@@ -44,6 +44,8 @@ aur res se ham bhej sakte hai with send() se koi bhi data aur sendfile() se file
 1)req aur resoponse cyle ka jo protocols follow karti hai 
 1)GET-{
     -TO GET data 
+    to get all use .find({},callback function)
+    sare function ek call back function lete hai 
 }
 2)POST{
     to send data from front end to backend
@@ -140,7 +142,126 @@ app.listen(3000);
     })
 }
 //Middleware function 
+beech ka kaam karte hai 
+server mei req aur res ki cycle ke beec hmei kuch processing hoti hai jaise ki kuch aur function chale before get req se unko kehte hai miidleware
+all function in backend is middleware function
+aur order agar a ,b,c,d ha toh isi order mei chalenege 
+types->{
+    1)app.use(----)->global middleware ye line hamesha chalega chahe koi bhi req ho 
+    2)app.get()->specific path ye tab chalega jab get request hogi 
+}
+Benefits->1)error handling 
+2)404 pages return karne ke k
+3)logger function 
+4)app.use(express.json()) jo bhi json data ara hai javascript obj mei convert kardo parse jason to js obj 
+-How to use them ->
+3 para req res aur next and jo bhi precess ke baad ham next ko call kar dei 
+in case of error handling 4 PARAMETERS hota hai 
+jub next() ko call hota hai ttoh req aur res aage carry forward hote rehte hai jab tak res na bhej do 
 
 
 
+//MONGO DB->
+scalable ,robust and helps in loadbalancing ,sharding 
+drawback-not able to perform complex trnasactions
+joins bhi nahi support nahi karta write nahi karta 
+mongoose is wrapper to make us syntax friendly 
+X97H4WrVR895ZqSz
 
+sabse pehle mongoose ko require karo 
+fir mongoose.connect(db_link) db ki lnk do jaha par hai 
+abe ye ek promise deta hai to then lagao aur db pass karo 
+fir mongo db atlas par jaao new project add kardo
+fir new project mei security par jaao 
+fir database user mei jaake data baseuser banao aur pass save karo 
+fir network access mei jaao aur vaha se allow all kardo filhal 
+fir connect par jao aur aur vaha par new APPLICATION mei jaake connection ka link copy karo
+aur use db_link mei paste kardo passske saath 
+aur run server 
+
+
+ab ham db ka schema banenge using mongoose.schema in json format mei like mongoose.schema({name:{type:string,required:true}})
+now using this schema ham ek model ya ek ek karke entries banaenge 
+model banae ke lie ham use karte hai mongoose.model('naam',schema)
+ab user ko hame database mei dalna hai toh ham create ka use karte hai joki ek promise based hota hai toh ham async await use karte
+usermode.create(//obj ya data jo banaya )
+
+*CRUD-------->{
+    create toh upar dekh chuke hai .create se jo ki ek obj leta hai 
+
+}
+
+
+
+//hooks in mongoose-------->{
+    pre hooks and post hooks 
+    these fire after and before save event occurs in db 
+    now agar aisi cheez hai jisse db mei show nahi karna like confirm pass to usse save hone se pehle indefined kar do toh show nahi hogi 
+}
+
+//hashing-->{
+    use bcrypt lib 
+    generate key or salt using bcrypt.genSalt()
+    fir hash karo using bcrypt.hash() joki async fincitopn hai 
+}
+
+//cookies --->{
+    store data in user browser 
+    hamare http ki jo cycle hoti hai vo stateless hoti hai toh jab bhi ham scroool karte hai toh dusri req karte hai toh 
+    http ko nahi pata hita ki pichli req mei kya hua iss lie ham cookies add karte hai taaki ham server ko bataye paae ki
+    login karne ki zrurat nahi hai 
+    broserr bhi cookies store karta hai aur server ko bhejta hai 
+    pehel cookies set karenege aur phir using setHeader FUNCTION USME set cookies bataienge aur ek koi cookie set kar denege 
+    res.cookie se ham set karte hai cookie ki value ko aur phir uske andar ham maxAge aur other thngs set kar sakte hai 
+    secure:true and hhtpOnly:true ye hamesha lagani chaie taaki koi frontend se naaccess kar pae cookies hamari
+
+}
+
+
+///protect route{
+    ye bhi ek middle ka function hi likha hai jisme hamne agar login hai to hi sare users hsow kia using cookies 
+}
+//***JASON WEB TOKENS(JWT)
+{
+    ek secret key hoti hai backend ke pass 
+    3-HEADER ,PAYLOAD AND SIGNATURE
+    header ke and hoti hai encryption algo 
+    PAYLOAD ke passs hoti ha uniquie id  jo ham daalte hai 
+    SIGNATURE ke pass uid secret key + uid + algo
+    login ki req aai toh backend ek token banake bhej deta hai browser ko aur browser store kar leta hai 
+    ab phir se req bhejta hai toh jwt bhi bhejta hai 
+    backend bolta hia ki jo hear bhja vo payload aur khud ki secret key use karke ek naya signature banaya aur phir agar jo frontend se
+    signature aya hai aur ye bnaya hua signature agar same hai toh ye user valid hai and send a successfull response 
+    ab banane ka tareeka --- ham pehle using database se _id utha ke payload banate hai fir jwt.sign()se ham apna token banate hai jo ki
+    3 parameter leta hai 1)payload dusra secret key jo banae aur heaader --- header default set hota hai 
+    fir ham cookie banate hai jisme ham token bhej dete hai 
+    phir ham apne protect route kyuki JIS NAAM SE HAMNE coookie banai usi mei token bhi hota hai to vo cookie se hi jwt.verify mei bhet hai toh hame 
+    true and false result milta hai usi se vo verify kar leta hai 
+
+
+
+}
+
+//MVC ARCHITECTURE--{
+    it describes your major components 
+    defines relationship between those components
+    kaafi popular hai 
+    debugging is easy collab is easy
+    MODEL VIEW CONTROLLER
+    a3 models mei divide jo ki upar likhe 
+    model<--CONTROLLER-->view
+    model--->conatins data and database 
+    view-->ke andr hamar gui and frontend
+    CONTROLLER-->brain of application sare logic hote hai 
+}
+
+jwt.verify hame payload hi return karta hai jiske .payload par hamari id hoti hai 
+
+
+///FORGET PASSWORD---
+reset par click karne par ek new token 
+db mei new token save
+fir generate new link 
+resetpassword/token joki dynamic route hoga 
+and send this to email
+and update password
