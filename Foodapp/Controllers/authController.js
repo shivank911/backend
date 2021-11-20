@@ -102,6 +102,10 @@ module.exports.protectRoute=async function protectRoute(req,res,next){
         }
     }
     else{
+        if(req.get("User-Agent").includes("Mozilla")==true){
+            return req.redirect("/login");
+        }
+        //postman
         res.json({
             message:"please login",
         })
@@ -114,4 +118,61 @@ module.exports.protectRoute=async function protectRoute(req,res,next){
            }
        )
    }
+}
+
+
+module.exports.forgetpassword=async function forgetpassword(req,res){
+    let {email}=req.body;
+    try{
+        const user=await usermodel.findOne({email:email});
+        if(user){
+            const resetToken=user.createResetToken();
+            let reserTokenLink=`${req.protocol}://${req.get('host')}//resetpassword/${resetToken}`;
+        //send email to user using nodemailer
+        }
+        else{
+            res.json({
+                message:"please register first",
+            })
+        }
+    }
+    catch(err){
+        res.json({
+            message:err.message,
+        })
+    }
+}
+//reset password
+module.exports.resetpassword=async function resetpassword(req,res){
+   try{
+    let token=req.params.token;
+    let {password,confirnPassword}=req.body;
+    const user=await usermodel.findOne({resetToken:token});
+    if(user){
+        user.resetPassword(password,confirmPassword);
+        await user.save();
+        res.json({
+            message:"password change successful,please login again",
+        })
+    }
+    else{
+        res.json({
+            message:"user not found",
+        })
+    }
+   }
+    catch(err){
+        res.json({
+            message:err.message,
+        })
+    }
+}
+
+
+//logout
+module.exports.logout=function logout(req,res){
+    res.cookie('Login',' ',{maxAge:1});
+    res.json({
+        message:"user loged out successfully",
+    })
 }

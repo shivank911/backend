@@ -8,7 +8,7 @@ let jwt=require('jsonwebtoken');
 let JWT_KEY='SSSHHH';
 const usermodel=require('../Model/userModel')
 const {getUser,getAllUser,deleteUser,updateUser,}=require('../Controllers/userController');
-const { login, signup, isAuthorise,protectRoute } = require('../Controllers/authController');
+const { login, signup, isAuthorise,protectRoute,forgetpassword,resetpassword,logout } = require('../Controllers/authController');
 //user ke options
 userRouter.route('/:id')
 .patch(updateUser)
@@ -21,6 +21,18 @@ userRouter.route('/signup')
 //login
 userRouter.route('/login')
 .post(login);
+
+userRouter
+.route('/logout')
+.get(logout)
+
+userRouter.route('/forgetpassword')
+.post(forgetpassword);
+
+
+userRouter.route('/resetpassword/:token')
+.post(resetpassword);
+
 
 //profilepage
 app.use(protectRoute);

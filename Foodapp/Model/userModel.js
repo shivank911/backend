@@ -1,5 +1,6 @@
 let express=require('express');
 let mongoose=require('mongoose');
+const crypto=require('crypto');
 const emailValidator=require('email-validator');
 const db_link='mongodb+srv://admin:X97H4WrVR895ZqSz@cluster0.6id0f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 mongoose.connect(db_link)
@@ -44,7 +45,8 @@ mongoose.connect(db_link)
         profileImage:{
             type:String,
             default:'imag/users/default.png',
-        }
+        },
+        resetToken:String,
     });
     userSchema.pre('save',function(){
         this.confirmPassword=undefined
@@ -58,6 +60,17 @@ mongoose.connect(db_link)
     userSchema.post('save',function(doc){
         console.log('after save',doc);
     })
+
+    userSchema.methods.createResetToken=function(){
+        const resetToken=crypto.randomBytes(32).toString("hex");
+        this.resetToken=resetToken;
+        return resetToken;
+    }
+    userSchema.methods.resetPassword=function(password,confirmPassword){
+        this.password=password;
+        this.confirmPassword=confirmPassword;
+        this.resetToken=undefined;
+    }
     const usermodel=mongoose.model('usermode',userSchema);
 
     module.exports=usermodel;

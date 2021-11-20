@@ -265,3 +265,15 @@ fir generate new link
 resetpassword/token joki dynamic route hoga 
 and send this to email
 and update password
+
+
+//logut
+destroy the jwt token then successfull logged out 
+
+// plans
+pehle schema banao 
+model banao 
+export karo 
+royes banao CRUD 
+ADMIN YA RESTRUANT OWNER HI CHANGE KAR SAKTA 
+AUR GET universal 

@@ -1,6 +1,7 @@
 let express=require('express');
 let app=express();
 const userModel=require('./Model/userModel')
+const planmodel=require('./Model/planModel');
 const authRouter=require('./Router/authRouter');
 const userRouter=require('./Router/userRouter');
 const cookieParser=require('cookie-parser');
