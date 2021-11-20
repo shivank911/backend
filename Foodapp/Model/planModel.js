@@ -36,20 +36,20 @@ const planSchema=mongoose.Schema({
     }
 });
 const planmodel=mongoose.model("planmodel",planSchema);
-(async function createPlan(){
-    let plan ={
-        name:"SuperFood",
-        duration:30,
-        price:1000,
-        ratingsAverage:5,
-        discount:20
-    }
-    // let data=await planmodel.create(plan)
-    // console.log(data);
-    let doc=new planmodel(plan);
-    await doc.save();
+// (async function createPlan(){
+//     let plan ={
+//         name:"SuperFood1",
+//         duration:30,
+//         price:1000,
+//         ratingsAverage:5,
+//         discount:20
+//     }
+//     // let data=await planmodel.create(plan)
+//     // console.log(data);
+//     let doc=new planmodel(plan);
+//     await doc.save();
 
-})();
+// })();
 
 
 module.exports=planmodel;

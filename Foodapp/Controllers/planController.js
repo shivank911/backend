@@ -42,7 +42,7 @@ module.exports.getallplans=async function getallplans(req,res){
 
 module.exports.updateplan=async function updateplan(req,res){
     try{
-        let id=req.body.id;
+        let id=req.params.id;
         let datatobeupdated=req.body;
         let plan=await planmodel.findById(id);
         let keys=[];
@@ -106,6 +106,29 @@ module.exports.top3plans=async function top3plans(req,res){
             message:"top 3 plans",
             data:plans,
         })
+    }
+    catch(err){
+        res.json({
+            message:err.message,
+        })
+    }
+}
+
+module.exports.getplan=async function getplan(req,res){
+    try{
+        let id=req.params.id;
+        let plan=await planmodel.findById(id);
+        if(plans){
+            return res.json({
+                message:"plan get successfull",
+                data:plan,
+            })
+        }
+        else{
+            return res.json({
+                message:"plan not found",
+            })
+        }
     }
     catch(err){
         res.json({
