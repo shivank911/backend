@@ -4,7 +4,7 @@ let jwt=require('jsonwebtoken');
 const { functionsIn } = require('lodash');
 const { findOne } = require('../Model/userModel');
 const { use } = require('../Router/userRouter');
-let JWT_KEY="SSSHHH";
+let JWT_KEY=require("../secrets");
 
 
 module.exports.signup=async function signup(req,res){

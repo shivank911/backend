@@ -276,4 +276,17 @@ model banao
 export karo 
 royes banao CRUD 
 ADMIN YA RESTRUANT OWNER HI CHANGE KAR SAKTA 
-AUR GET universal 
+AUR GET universal
+
+
+//review plan mei hame plans aur user ko populate karne ke lie ham ek pre hook banake find function par lagate hai ki kabhi bhi 
+find call ho toh vo hook chale 
+usme ham jo jo entries user schema aur plan schema se chaie vo le aate agar sari chaie to seedha naam daal do nahi toh jo jo 
+entries chaie vo ek ek karke eg 
+reviewSchema.pre(/^find/, function (next) {
+    this.populate({
+      path: "user",
+      select: "name profileImage"
+    }).populate("plan");
+    next();
+  });

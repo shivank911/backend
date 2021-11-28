@@ -5,7 +5,7 @@ let cookieParser=require('cookie-parser');
 app.use(express.json());
 app.use(cookieParser());
 let jwt=require('jsonwebtoken');
-let JWT_KEY='SSSHHH';
+let JWT_KEY=require('../secrets');
 const usermodel=require('../Model/userModel')
 const {getUser,getAllUser,deleteUser,updateUser,}=require('../Controllers/userController');
 const { login, signup, isAuthorise,protectRoute,forgetpassword,resetpassword,logout } = require('../Controllers/authController');
