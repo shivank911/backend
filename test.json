@@ -1,0 +1,1290 @@
+{
+    "jVersion": 4,
+    "name": "Shelendra",
+    "email": "shia.sharma123@gmail.com",
+    "password": "this is a hex coded password",
+    "theme": "w1",
+    "isSplash": true,
+    "logo":
+    "https://images.fastcompany.net/image/upload/w_596,c_limit,q_auto:best,f_auto/fc/3034007-inline-i-applelogo.jpg",
+    "splash": {
+      "appName": "example",
+      "img_url":
+      "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+    },
+    "/test": {
+      "mobile": {
+        "type": "scaffold",
+        "configs": {
+          "bg_color": "000000"
+  
+        },
+        "children": [
+          {
+            "type": "padding",
+            "configs": {
+              "padding": {"all": "8.0px"}
+            },
+            "children": [
+              {
+                "type": "center",
+                "configs": {},
+                "children": [
+                  {
+                    "type": "column",
+                    "configs": {
+                      "mainAxisAlignment": "center",
+                      "crossAxisAlignment": "center",
+                      "mainAxisSize": "max"
+                    },
+                    "children": [
+                      {
+                        "type": "padding",
+                        "configs": {
+                          "padding": {
+                            "all": 8.0,
+                            "left": 0.0,
+                            "right": 0.0,
+                            "bottom": 0.0,
+                            "top": 0.0
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "center",
+                            "configs": {},
+                            "children": [
+                              {
+                                "type": "text",
+                                "configs": {
+                                  "text": "Login Changes",
+                                  "color": "ffffff",
+                                  "fontSize": {
+                                    "height": "6"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "padding",
+                        "configs": {
+                          "padding": {
+                            "all": 0.0,
+                            "left": 20.0,
+                            "right": 20.0,
+                            "bottom": 10.0,
+                            "top": 0.0
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "textfield",
+                            "configs": {
+                              "readOnly": false,
+                              "maxlength": 30,
+                              "obscure": false,
+                              "style": {
+                                "color": "ffffff"
+                              },
+                              "decoration": {
+                                "border": {
+                                  "borderColor": "673AB7",
+                                  "borderWidth": 1.0
+                                },
+                                "enabledBorder": {
+                                  "borderColor": "ffffff",
+                                  "borderWidth": 1.0
+                                },
+                                "counterStyle": {
+                                  "color": "aaaaaa"
+                                },
+                                "hintStyle": {
+                                  "color": "aaaaa"
+                                },
+                                "labelStyle": {
+                                  "color": "aaaaaa"
+                                },
+                                "label": "Enter A User Name",
+                                "hint": "Enter a valid id as abc1@gmail.com"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "padding",
+                        "configs": {
+                          "padding": {
+                            "all": 0.0,
+                            "left": 20.0,
+                            "right": 20.0,
+                            "bottom": 0.0,
+                            "top": 0.0
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "textfield",
+                            "configs": {
+                              "maxlength": 30,
+                              "obscure": true,
+                              "style": {
+                                "color": "ffffff"
+                              },
+                              "decoration": {
+                                "border": {
+                                  "borderColor": "673AB7",
+                                  "borderWidth": 1.0
+                                },
+                                "enabledBorder": {
+                                  "borderColor": "ffffff",
+                                  "borderWidth": 1.0
+                                },
+                                "counterStyle": {
+                                  "color": "aaaaaa"
+                                },
+                                "hintStyle": {
+                                  "color": "aaaaaa"
+                                },
+                                "labelStyle": {
+                                  "color": "aaaaaa"
+                                },
+                                "label": "Enter A Password",
+                                "hint": "Enter your secure password"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "padding",
+                        "configs": {
+                          "padding": {
+                            "all": 0.0,
+                            "left": 0.0,
+                            "right": 12.0,
+                            "bottom": 0.0,
+                            "top": 0.0
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "row",
+                            "configs": {
+                              "mainAxisAlignment": "end",
+                              "crossAxisAlignment": "center"
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "configs": {
+                                  "text": "Forget Password",
+                                  "color": "FFFFFF",
+                                  "fontSize": {
+                                    "height": "15px"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "container",
+                        "configs": {
+                          "height": 5,
+                          "width": 70,
+                          "margin": {
+                            "top": 20
+                          },
+                          "decoration": {
+                            "color": "2196F3",
+                            "borderRadius": {
+                              "circular": 10
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "textbutton",
+                            "configs": {
+                              "onPress": {
+                                "name": "loginFunc",
+                                "success": {
+                                  "nextRoute": "/bottomNav"
+                                },
+                                "error": "dialog"
+                              }
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "configs": {
+                                  "text": "Login Now",
+                                  "color": "aaaaaa",
+                                  "fontSize": {
+                                    "height": 2.5
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "container",
+                        "configs": {
+                          "height": 5,
+                          "width": 70,
+                          "margin": {
+                            "top": 20
+                          },
+                          "decoration": {
+                            "color": "43a35d",
+                            "borderRadius": {
+                              "circular": 10
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "textbutton",
+                            "configs": {
+                              "onPress": {
+                                "name": "regFunc",
+                                "success": {
+                                  "nextRoute": "/reg"
+                                },
+                                "error": "dialog"
+                              }
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "configs": {
+                                  "text": "Register",
+                                  "color": "aaaaaa",
+                                  "fontSize": {
+                                    "height": 2.5
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "desktop": {
+        "type": "scaffold",
+        "configs": {"bg_color": "000000"},
+        "children": [
+          {
+            "type": "center",
+            "configs": {},
+            "children": [
+              {
+                "type": "material",
+                "configs": {
+                  "elevation": "5.0",
+                  "borderRadius": {
+                    "circular": 10.0
+                  }
+                },
+                "children": [
+                  {
+                    "type": "container",
+                    "configs": {
+                      "width": 40,
+                      "height": 80,
+                      "alignment": "bottomCenter",
+                      "decoration": {
+                        "borderRadius": {
+                          "circular": 10
+                        },
+                        "color": "222222"
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "column",
+                        "configs": {
+                          "mainAxisAlignment": "center",
+                          "crossAxisAlignment": "center"
+                        },
+                        "children": [
+                          {
+                            "type": "padding",
+                            "configs": {
+                              "padding": {
+                                "all": "8px"
+                              }
+                            },
+                            "children": [
+                              {
+                                "type": "center",
+                                "configs": {},
+                                "children": [
+                                  {
+                                    "type": "text",
+                                    "configs": {
+                                      "text": "Login",
+                                      "color": "aaaaaa",
+                                      "fontSize": 6,
+                                      "fontWeight": "bold",
+                                      "maxLines": "2",
+                                      "textAlign": "center"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "container",
+                            "configs": {
+                              "width": 25,
+                              "margin": {
+                                "left": "0",
+                                "right": "0",
+                                "bottom": "0",
+                                "top": "10px"
+                              }
+                            },
+                            "children": [
+                              {
+                                "type": "textfield",
+                                "configs": {
+                                  "maxLength": "30.0",
+                                  "textCapitalization": "none",
+                                  "style": {
+                                    "color": "ffffff"
+                                  },
+                                  "textAlign": "center",
+                                  "obscure": false,
+                                  "onTap": "",
+                                  "decoration": {
+                                    "border": {
+                                      "borderColor": "673AB7",
+                                      "borderWidth": 1.0
+                                    },
+                                    "enabledBorder": {
+                                      "borderColor": "ffffff",
+                                      "borderWidth": 1.0,
+                                      "borderRadius": {}
+                                    },
+                                    "hint": "Enter a valid email Id",
+                                    "hintStyle": {
+                                      "color": "aaaaaa",
+                                      "fontSize": 2,
+                                      "fontWeight": "normal"
+                                    },
+                                    "label": "User Name",
+                                    "labelStyle": {
+                                      "color": "aaaaaa",
+                                      "fontSize": 6,
+                                      "fontWeight": "bold"
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "container",
+                            "configs": {
+                              "width": "25",
+                              "height": "12",
+                              "margin": {
+                                "all": 10.0
+                              },
+                              "decoration": {
+                                "color": ""
+                              }
+                            },
+                            "children": [
+                              {
+                                "type": "textfield",
+                                "configs": {
+                                  "maxLength": 30.0,
+                                  "textAlign": "center",
+                                  "obscure": true,
+                                  "style": {
+                                    "color": "ffffff"
+                                  },
+                                  "decoration": {
+                                    "border": {
+                                      "borderColor": "673AB7"
+                                    },
+                                    "enabledBorder": {
+                                      "borderColor": "ffffff"
+                                    },
+                                    "label": "Password",
+                                    "hint": "Enter Password",
+                                    "hintStyle": {
+                                      "color": "aaaaaa",
+                                      "fontSize": 2,
+                                      "fontWeight": "normal"
+                                    },
+                                    "labelStyle": {
+                                      "color": "aaaaaa",
+                                      "fontSize": 2
+                                    },
+                                    "prefixIcon": {
+                                      "configs": {
+                                        "size": "25px",
+                                        "data": "account_circle"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "container",
+                            "configs": {
+                              "width": 25,
+                              "height": 5,
+                              "margin": {
+                                "left": "0",
+                                "right": "0",
+                                "bottom": "0",
+                                "top": 10
+                              },
+                              "decoration": {
+                                "borderRadius": {
+                                  "circular": 10
+                                },
+                                "color": "43A25D"
+                              }
+                            },
+                            "children": [
+                              {
+                                "type": "textbutton",
+                                "configs": {
+                                  "onPress": {
+                                    "name": "loginFunc",
+                                    "success": {
+                                      "nextRoute": "/home"
+                                    },
+                                    "error": "dialog"
+                                  },
+                                  "onLongPress": ""
+                                },
+                                "children": [
+                                  {
+                                    "type": "text",
+                                    "configs": {
+                                      "text": "Login",
+                                      "color": "aaaaaa",
+                                      "fontSize": 2.5,
+                                      "fontWeight": "normal",
+                                      "maxLines": "2",
+                                      "textAlign": "center"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "container",
+                            "configs": {
+                              "width": 25,
+                              "height": 5,
+                              "margin": {
+                                "left": "0",
+                                "right": "0",
+                                "bottom": "0",
+                                "top": 20
+                              },
+                              "decoration": {
+                                "borderRadius": {
+                                  "circular": 10
+                                },
+                                "color": "2196F3"
+                              }
+                            },
+                            "children": [
+                              {
+                                "type": "textbutton",
+                                "configs": {
+                                  "onPress": {
+                                    "name": "regFunc",
+                                    "success": {
+                                      "nextRoute": "/reg"
+                                    },
+                                    "error": "dialog"
+                                  },
+                                  "onLongPress": {}
+                                },
+                                "children": [
+                                  {
+                                    "type": "text",
+                                    "configs": {
+                                      "text": "Register",
+                                      "color": "aaaaaa",
+                                      "fontSize": 2.5,
+                                      "fontWeight": "normal",
+                                      "maxLines": "2",
+                                      "textAlign": "center"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/reg": {
+      "mobile": {
+        "type": "scaffold",
+        "configs": {"bg_color": "ffffff"},
+        "children": [
+          {
+            "type": "padding",
+            "configs": {
+              "padding": {"all": "8.0px"}
+            },
+            "children": [
+              {
+                "type": "center",
+                "configs": {},
+                "children": [
+                  {
+                    "type": "column",
+                    "configs": {
+                      "mainAxisAlignment": "center",
+                      "crossAxisAlignment": "center",
+                      "mainAxisSize": "max"
+                    },
+                    "children": [
+                      {
+                        "type": "padding",
+                        "configs": {
+                          "padding": {
+                            "all": 8.0,
+                            "left": 0.0,
+                            "right": 0.0,
+                            "bottom": 0.0,
+                            "top": 0.0
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "center",
+                            "configs": {},
+                            "children": [
+                              {
+                                "type": "text",
+                                "configs": {
+                                  "text": "Registration",
+                                  "color": "aaaaaa",
+                                  "fontSize": {
+                                    "height": "6"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "padding",
+                        "configs": {
+                          "padding": {
+                            "all": 0.0,
+                            "left": 20.0,
+                            "right": 20.0,
+                            "bottom": 10.0,
+                            "top": 0.0
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "textfield",
+                            "configs": {
+                              "readOnly": false,
+                              "maxlength": 30,
+                              "obscure": false,
+                              "style": {
+                                "color": "000000"
+                              },
+                              "decoration": {
+                                "border": {
+                                  "borderColor": "673AB7",
+                                  "borderWidth": 1.0
+                                },
+                                "enabledBorder": {
+                                  "borderColor": "aaaaaa",
+                                  "borderWidth": 1.0
+                                },
+                                "counterStyle": {
+                                  "color": "aaaaaa"
+                                },
+                                "hintStyle": {
+                                  "color": "aaaaa"
+                                },
+                                "labelStyle": {
+                                  "color": "aaaaaa"
+                                },
+                                "label": "User Name",
+                                "hint": "Enter a valid user name"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "padding",
+                        "configs": {
+                          "padding": {
+                            "all": 0.0,
+                            "left": 20.0,
+                            "right": 20.0,
+                            "bottom": 10.0,
+                            "top": 0.0
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "textfield",
+                            "configs": {
+                              "readOnly": false,
+                              "maxlength": 30,
+                              "obscure": false,
+                              "style": {
+                                "color": "000000"
+                              },
+                              "decoration": {
+                                "border": {
+                                  "borderColor": "673AB7",
+                                  "borderWidth": 1.0
+                                },
+                                "enabledBorder": {
+                                  "borderColor": "aaaaaa",
+                                  "borderWidth": 1.0
+                                },
+                                "counterStyle": {
+                                  "color": "aaaaaa"
+                                },
+                                "hintStyle": {
+                                  "color": "aaaaa"
+                                },
+                                "labelStyle": {
+                                  "color": "aaaaaa"
+                                },
+                                "label": "Email ID",
+                                "hint": "Enter a valid id as abc@gmail.com"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "padding",
+                        "configs": {
+                          "padding": {
+                            "all": 0.0,
+                            "left": 20.0,
+                            "right": 20.0,
+                            "bottom": 10.0,
+                            "top": 0.0
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "textfield",
+                            "configs": {
+                              "readOnly": false,
+                              "maxlength": 30,
+                              "obscure": true,
+                              "style": {
+                                "color": "000000"
+                              },
+                              "decoration": {
+                                "border": {
+                                  "borderColor": "673AB7",
+                                  "borderWidth": 1.0
+                                },
+                                "enabledBorder": {
+                                  "borderColor": "aaaaaa",
+                                  "borderWidth": 1.0
+                                },
+                                "counterStyle": {
+                                  "color": "aaaaaa"
+                                },
+                                "hintStyle": {
+                                  "color": "aaaaa"
+                                },
+                                "labelStyle": {
+                                  "color": "aaaaaa"
+                                },
+                                "label": "Password",
+                                "hint": "Enter a valid password"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "padding",
+                        "configs": {
+                          "padding": {
+                            "all": 0.0,
+                            "left": 20.0,
+                            "right": 20.0,
+                            "bottom": 10.0,
+                             "top": 0.0
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "textfield",
+                            "configs": {
+                              "readOnly": false,
+                              "maxlength": 30,
+                              "obscure": true,
+                              "style": {
+                                "color": "000000"
+                              },
+                              "decoration": {
+                                "border": {
+                                  "borderColor": "673AB7",
+                                  "borderWidth": 1.0
+                                },
+                                "enabledBorder": {
+                                  "borderColor": "aaaaaa",
+                                  "borderWidth": 1.0
+                                },
+                                "counterStyle": {
+                                  "color": "aaaaaa"
+                                },
+                                "hintStyle": {
+                                  "color": "aaaaa"
+                                },
+                                "labelStyle": {
+                                  "color": "aaaaaa"
+                                },
+                                "label": "Confirm Password",
+                                "hint": "Re-enter the password"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "padding",
+                        "configs": {
+                          "padding": {
+                            "all": 0.0,
+                            "left": 0.0,
+                            "right": 12.0,
+                            "bottom": 0.0,
+                            "top": 0.0
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "row",
+                            "configs": {
+                              "mainAxisAlignment": "end",
+                              "crossAxisAlignment": "center"
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "configs": {
+                                  "text": "Forget Password",
+                                  "color": "aaaaaa",
+                                  "fontSize": {
+                                    "height": "15px"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "container",
+                        "configs": {
+                          "height": 5,
+                          "width": 70,
+                          "margin": {
+                            "top": 20
+                          },
+                          "decoration": {
+                            "color": "F44336",
+                            "borderRadius": {
+                              "circular": 10
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "textbutton",
+                            "configs": {
+                              "onPress": {
+                                "name": "loginFunc",
+                                "success": {
+                                  "nextRoute": "/"
+                                },
+                                "error": "dialog"
+                              }
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "configs": {
+                                  "text": "Login",
+                                  "color": "222222",
+                                  "fontSize": {
+                                    "height": 2.5
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "container",
+                        "configs": {
+                          "height": 5,
+                          "width": 70,
+                          "margin": {
+                            "top": 20
+                          },
+                          "decoration": {
+                            "color": "43a35d",
+                            "borderRadius": {
+                              "circular": 10
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "textbutton",
+                            "configs": {
+                              "onPress": {
+                                "name": "regFunc",
+                                "success": {
+                                  "nextRoute": "/"
+                                },
+                                "error": "dialog"
+                              }
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "configs": {
+                                  "text": "Register",
+                                  "color": "222222",
+                                  "fontSize": {
+                                    "height": 2.5
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "desktop": {
+        "type": "scaffold",
+        "configs": {"bg_color": "ffffff"},
+        "children": [
+          {
+            "type": "center",
+            "configs": {},
+            "children": [
+              {
+                "type": "material",
+                "configs": {
+                  "elevation": "5.0",
+                  "borderRadius": {
+                    "circular": 10.0
+                  }
+                },
+                "children": [
+                  {
+                    "type": "container",
+                    "configs": {
+                      "width": 40,
+                      "height": 80,
+                      "alignment": "bottomCenter",
+                      "decoration": {
+                        "borderRadius": {
+                          "circular": 10
+                        },
+                        "color": "ffffff"
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "column",
+                        "configs": {
+                          "mainAxisAlignment": "center",
+                          "crossAxisAlignment": "center"
+                        },
+                        "children": [
+                          {
+                            "type": "padding",
+                            "configs": {
+                              "padding": {
+                                "all": "8px"
+                              }
+                            },
+                            "children": [
+                              {
+                                "type": "center",
+                                "configs": {},
+                                "children": [
+                                  {
+                                    "type": "text",
+                                    "configs": {
+                                      "text": "Registration",
+                                      "color": "aaaaaa",
+                                      "fontSize": 6,
+                                      "fontWeight": "bold",
+                                      "maxLines": "2",
+                                      "textAlign": "center"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "container",
+                            "configs": {
+                              "width": 25,
+                              "margin": {
+                                "left": "0",
+                                "right": "0",
+                                "bottom": "0",
+                                "top": "10px"
+                              }
+                            },
+                            "children": [
+                              {
+                                "type": "textfield",
+                                "configs": {
+                                  "maxLength": "30.0",
+                                  "textCapitalization": "none",
+                                  "style": {
+                                    "color": "000000"
+                                  },
+                                  "textAlign": "center",
+                                  "obscure": false,
+                                  "onTap": "",
+                                  "decoration": {
+                                    "border": {
+                                      "borderColor": "673AB7",
+                                      "borderWidth": 1.0
+                                    },
+                                    "enabledBorder": {
+                                      "borderColor": "aaaaaa",
+                                      "borderWidth": 1.0,
+                                      "borderRadius": {}
+                                    },
+                                    "hint": "Enter your user name",
+                                    "hintStyle": {
+                                      "color": "aaaaaa",
+                                      "fontSize": 2,
+                                      "fontWeight": "normal"
+                                    },
+                                    "label": "User Name",
+                                    "labelStyle": {
+                                      "color": "aaaaaa",
+                                      "fontSize": 6,
+                                      "fontWeight": "bold"
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "container",
+                            "configs": {
+                              "width": 25,
+                              "margin": {
+                                "left": "0",
+                                "right": "0",
+                                "bottom": "0",
+                                "top": "10px"
+                              }
+                            },
+                            "children": [
+                              {
+                                "type": "textfield",
+                                "configs": {
+                                  "maxLength": "30.0",
+                                  "textCapitalization": "none",
+                                  "style": {
+                                    "color": "000000"
+                                  },
+                                  "textAlign": "center",
+                                  "obscure": false,
+                                  "onTap": "",
+                                  "decoration": {
+                                    "border": {
+                                      "borderColor": "673AB7",
+                                      "borderWidth": 1.0
+                                    },
+                                    "enabledBorder": {
+                                      "borderColor": "aaaaaa",
+                                      "borderWidth": 1.0,
+                                      "borderRadius": {}
+                                    },
+                                    "hint": "Enter a valid email Id",
+                                    "hintStyle": {
+                                      "color": "aaaaaa",
+                                      "fontSize": 2,
+                                      "fontWeight": "normal"
+                                    },
+                                    "label": "Email ID",
+                                    "labelStyle": {
+                                      "color": "aaaaaa",
+                                      "fontSize": 6,
+                                      "fontWeight": "bold"
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "container",
+                            "configs": {
+                              "width": 25,
+                              "margin": {
+                                "left": "0",
+                                "right": "0",
+                                "bottom": "0",
+                                "top": "10px"
+                              }
+                            },
+                            "children": [
+                              {
+                                "type": "textfield",
+                                "configs": {
+                                  "maxLength": "30.0",
+                                  "textCapitalization": "none",
+                                  "style": {
+                                    "color": "000000"
+                                  },
+                                  "textAlign": "center",
+                                  "obscure": true,
+                                  "onTap": "",
+                                  "decoration": {
+                                    "border": {
+                                      "borderColor": "673AB7",
+                                      "borderWidth": 1.0
+                                    },
+                                    "enabledBorder": {
+                                      "borderColor": "aaaaaa",
+                                      "borderWidth": 1.0,
+                                      "borderRadius": {}
+                                    },
+                                    "hint": "Enter a valid Password",
+                                    "hintStyle": {
+                                      "color": "aaaaaa",
+                                      "fontSize": 2,
+                                      "fontWeight": "normal"
+                                    },
+                                    "label": "Password",
+                                    "labelStyle": {
+                                      "color": "aaaaaa",
+                                      "fontSize": 6,
+                                      "fontWeight": "bold"
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "container",
+                            "configs": {
+                              "width": 25,
+                              "margin": {
+                                "left": "0",
+                                "right": "0",
+                                "bottom": "0",
+                                "top": "10px"
+                              }
+                            },
+                            "children": [
+                              {
+                                "type": "textfield",
+                                "configs": {
+                                  "maxLength": "30.0",
+                                  "textCapitalization": "none",
+                                  "style": {
+                                    "color": "000000"
+                                  },
+                                  "textAlign": "center",
+                                  "obscure": true,
+                                  "onTap": "",
+                                  "decoration": {
+                                    "border": {
+                                      "borderColor": "673AB7",
+                                      "borderWidth": 1.0
+                                    },
+                                    "enabledBorder": {
+                                      "borderColor": "aaaaaa",
+                                      "borderWidth": 1.0,
+                                      "borderRadius": {}
+                                    },
+                                    "hint": "Reenter the password",
+                                    "hintStyle": {
+                                      "color": "aaaaaa",
+                                      "fontSize": 2,
+                                      "fontWeight": "normal"
+                                    },
+                                    "label": "Confirm Password",
+                                    "labelStyle": {
+                                      "color": "aaaaaa",
+                                      "fontSize": 6,
+                                      "fontWeight": "bold"
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "container",
+                            "configs": {
+                              "width": 25,
+                              "height": 5,
+                              "margin": {
+                                "left": "0",
+                                "right": "0",
+                                "bottom": "0",
+                                "top": 20
+                              },
+                              "decoration": {
+                                "borderRadius": {
+                                  "circular": 10
+                                },
+                                "color": "43a35d"
+                              }
+                            },
+                            "children": [
+                              {
+                                "type": "textbutton",
+                                "configs": {
+                                  "onPress": {},
+                                  "onLongPress": {}
+                                },
+                                "children": [
+                                  {
+                                    "type": "text",
+                                    "configs": {
+                                      "text": "Register",
+                                      "color": "222222",
+                                      "fontSize": 2.5,
+                                      "fontWeight": "normal",
+                                      "maxLines": "2",
+                                      "textAlign": "center"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "container",
+                            "configs": {
+                              "width": 25,
+                              "height": 5,
+                              "margin": {
+                                "left": "0",
+                                "right": "0",
+                                "bottom": "0",
+                                "top": 10
+                              },
+                              "decoration": {
+                                "borderRadius": {
+                                  "circular": 10
+                                },
+                               "color": "F44336"
+                              }
+                            },
+                            "children": [
+                              {
+                                "type": "textbutton",
+                                "configs": {
+                                  "onPress": {
+                                    "name": "regFunc",
+                                    "success": {
+                                      "nextRoute": "/"
+                                    },
+                                    "error": "dialog"
+                                  },
+                                  "onLongPress": ""
+                                },
+                                "children": [
+                                  {
+                                    "type": "text",
+                                    "configs": {
+                                      "text": "Back to Login",
+                                      "color": "222222",
+                                      "fontSize": 2.5,
+                                      "fontWeight": "normal",
+                                      "maxLines": "2",
+                                      "textAlign": "center"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }

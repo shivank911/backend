@@ -1,7 +1,6 @@
 let mongoose=require('mongoose');
 let express=require('express');
 let db_link='mongodb+srv://admin:X97H4WrVR895ZqSz@cluster0.6id0f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-
 mongoose.connect(db_link)
 .then(function(db){
     console.log("plan db connected");
@@ -9,7 +8,6 @@ mongoose.connect(db_link)
 .catch(function(err){
     console.log(err.message);
 })
-
 const planSchema=mongoose.Schema({
     name:{
         type:String,
@@ -36,20 +34,4 @@ const planSchema=mongoose.Schema({
     }
 });
 const planmodel=mongoose.model("planmodel",planSchema);
-// (async function createPlan(){
-//     let plan ={
-//         name:"SuperFood1",
-//         duration:30,
-//         price:1000,
-//         ratingsAverage:5,
-//         discount:20
-//     }
-//     // let data=await planmodel.create(plan)
-//     // console.log(data);
-//     let doc=new planmodel(plan);
-//     await doc.save();
-
-// })();
-
-
 module.exports=planmodel;

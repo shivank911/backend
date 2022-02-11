@@ -118,7 +118,8 @@ module.exports.getplan=async function getplan(req,res){
     try{
         let id=req.params.id;
         let plan=await planmodel.findById(id);
-        if(plans){
+        console.log("abc")
+        if(plan){
             return res.json({
                 message:"plan get successfull",
                 data:plan,

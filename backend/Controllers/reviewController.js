@@ -31,7 +31,7 @@ module.exports.top3reviews=async function top3reviews(req,res){
             rating:-1,
         }).limit(3);
         if(reviews){
-            return res.jsos({
+            return res.json({
                 message:"top 3 reviews successful",
                 data:reviews
             })
